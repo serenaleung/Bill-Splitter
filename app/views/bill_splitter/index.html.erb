@@ -1,0 +1,49 @@
+<div class="container">
+ <div class="row">
+   <div class="col-md-6 col-sm-6 col-xs-6">
+ <h1>Welcome to Bill Splitter</h1><br>
+ <hr>
+ <%= form_tag bill_splitter_path do%>
+   <%= label_tag :amount %>
+   <div class="input-group">
+     <span class="input-group-addon">$</span>
+     <%= text_field_tag :amount, nil, class: "form-control" %>
+   </div><br>
+
+   <%= label_tag :tax %>
+   <div class="input-group">
+     <span class="input-group-addon">%</span>
+     <%= text_field_tag :tax, nil, class: "form-control" %>
+   </div><br>
+
+   <%= label_tag :tip %>
+   <div class="input-group">
+     <span class="input-group-addon">%</span>
+     <%= text_field_tag :tip, nil, class: "form-control" %>
+   </div><br>
+
+   <%= label_tag :people %>
+   <div class="input-group">
+     <span class="input-group-addon">Num</span>
+     <%= text_field_tag :people, nil, class: "form-control" %>
+   </div>
+   <br>
+ <%# will generates a submit button for the form with label 'Contact Us' %>
+ <div>
+   <%= submit_tag 'Submit'%>
+ </div>
+
+ <% end %>
+</div>
+</div>
+<% if params[:result]%>
+  <h3>Every Person Must Pay </h3><span class="res"><%= params[:result] %></span>
+<% end %>
+</div>
+
+<!--
+  <% if params[:result]%>
+    <h1>Your total is <%= params[:result] %> </h1>
+  <% end %> -->
+<!--  -->
+=
